@@ -1,10 +1,8 @@
-# sapper-template
+# electron-svelte
 
 The default template for setting up a [Sapper](https://github.com/sveltejs/sapper) project. Can use either Rollup or webpack as bundler.
 
-
 ## Getting started
-
 
 ### Using `degit`
 
@@ -24,13 +22,11 @@ npx degit "sveltejs/sapper-template#webpack" my-app
 
 Replace `my-app` with the path where you wish to create the project.
 
-
 ### Using GitHub templates
 
 Alternatively, you can create the new project as a GitHub repository using GitHub's template feature.
 
 Go to either [sapper-template-rollup](https://github.com/sveltejs/sapper-template-rollup) or [sapper-template-webpack](https://github.com/sveltejs/sapper-template-webpack) and click on "Use this template" to create a new project repository initialized by the template.
-
 
 ### Running the project
 
@@ -69,11 +65,9 @@ The script does not support webpack at the moment.
 
 Sapper expects to find two directories in the root of your project —  `src` and `static`.
 
-
 ### src
 
 The [src](src) directory contains the entry points for your app — `client.js`, `server.js` and (optionally) a `service-worker.js` — along with a `template.html` file and a `routes` directory.
-
 
 #### src/routes
 
@@ -89,18 +83,15 @@ There are three simple rules for naming the files that define your routes:
 * The file `src/routes/index.svelte` (or `src/routes/index.js`) corresponds to the root of your app. `src/routes/about/index.svelte` is treated the same as `src/routes/about.svelte`.
 * Files and directories with a leading underscore do *not* create routes. This allows you to colocate helper modules and components with the routes that depend on them — for example you could have a file called `src/routes/_helpers/datetime.js` and it would *not* create a `/_helpers/datetime` route.
 
-
 #### src/node_modules/images
 
 Images added to `src/node_modules/images` can be imported into your code using `import 'images/<filename>'`. They will be given a dynamically generated filename containing a hash, allowing for efficient caching and serving the images on a CDN.
 
 See [`index.svelte`](src/routes/index.svelte) for an example.
 
-
 #### src/node_modules/@sapper
 
 This directory is managed by Sapper and generated when building. It contains all the code you import from `@sapper` modules.
-
 
 ### static
 
@@ -115,7 +106,6 @@ import { files } from '@sapper/service-worker';
 If you have static files you do not want to cache, you should exclude them from this list after importing it (and before passing it to `cache.addAll`).
 
 Static files are served using [sirv](https://github.com/lukeed/sirv).
-
 
 ## Bundler configuration
 
@@ -135,7 +125,6 @@ vercel
 
 If your app can't be exported to a static site, you can use the [now-sapper](https://github.com/thgh/now-sapper) builder. You can find instructions on how to do so in its [README](https://github.com/thgh/now-sapper#basic-usage).
 
-
 ## Using external components
 
 When using Svelte components installed from npm, such as [@sveltejs/svelte-virtual-list](https://github.com/sveltejs/svelte-virtual-list), Svelte needs the original component source (rather than any precompiled JavaScript that ships with the component). This allows the component to be rendered server-side, and also keeps your client-side app smaller.
@@ -146,8 +135,6 @@ Because of that, it's essential that the bundler doesn't treat the package as an
 npm install -D @sveltejs/svelte-virtual-list
 ```
 
-
 ## Bugs and feedback
 
 Sapper is in early development, and may have the odd rough edge here and there. Please be vocal over on the [Sapper issue tracker](https://github.com/sveltejs/sapper/issues).
-# electron-svelte
