@@ -7,21 +7,23 @@
   },
   "version": "0.0.1",
   "scripts": {
-    "dev": "sapper dev",
+    "svelte-dev": "sapper dev",
+    "electron-dev": "wait-on http://localhost:3000 && electron electron.js",
+    "dev": "concurrently \"npm run svelte-dev\" \"npm run electron-dev\"",
     "build": "sapper build --legacy",
     "export": "sapper export --legacy",
-    "start": "node __sapper__/build"
+    "sapper-start": "node __sapper__/build"
   },
   "dependencies": {
     "compression": "^1.7.1",
+    "polka": "next",
+    "sirv": "^1.0.0"
+  },
+  "devDependencies": {
+    "wait-on": "^5.2.0",
     "concurrently": "^5.3.0",
     "electron": "^10.1.5",
     "electron-builder": "^22.9.1",
-    "polka": "next",
-    "sirv": "^1.0.0",
-    "wait-on": "^5.2.0"
-  },
-  "devDependencies": {
     "sapper": "^0.28.0",
     "svelte": "^3.17.3",
     "@babel/core": "^7.0.0",
